@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Image from "../Images/image.jpg";
-import CVPDF from "../Berkay_Serbetci_CV.pdf";
+import CV from "../BerkaySerbetci_CV.pdf";
 import {
   HeaderTop,
   NameLeft,
@@ -43,7 +43,7 @@ export default function MainPage() {
     setOpen(!isOpen);
   };
   const HandleDownloadCV = () => {
-    window.open(CVPDF, "_blank");
+    window.open(CV, "_blank");
   };
   const handleCloseToggle = () => {
     setOpen(false);

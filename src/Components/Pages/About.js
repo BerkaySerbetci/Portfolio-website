@@ -1,5 +1,5 @@
 import React from "react";
-import CVPDF from "../Berkay_Serbetci_CV.pdf";
+import CV from "../BerkaySerbetci_CV.pdf";
 import {
   AboutLabel,
   AboutPage,
@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   const HandleDownloadCV = () => {
-    window.open(CVPDF, "_blank");
+    window.open(CV, "_blank");
   };
   return (
     <Page>
