@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Image from "../Images/image.jpg";
+import CVPDF from "../Berkay_Serbetci_CV.pdf";
 import {
   HeaderTop,
   NameLeft,
@@ -41,6 +42,9 @@ export default function MainPage() {
   const handleToogle = () => {
     setOpen(!isOpen);
   };
+  const HandleDownloadCV = () => {
+    window.open(CVPDF, "_blank");
+  };
   const handleCloseToggle = () => {
     setOpen(false);
   };
@@ -49,6 +53,14 @@ export default function MainPage() {
     const NewPage = window.open(url, "_blank");
     NewPage.focus();
   };
+  const directtoGmail = () => {
+    // Replace 'your-email@gmail.com' with your own Gmail address
+    const email = "berkayserbetci13@gmail.com";
+    const mailtoUrl = `mailto:${email}`;
+
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <Page>
       <HeaderTop>
@@ -66,6 +78,7 @@ export default function MainPage() {
           <Label>About</Label>
         </Link>
         <MenuLabel onClick={handleToogle}>Contact</MenuLabel>
+        <Label onClick={HandleDownloadCV}>CV</Label>
         <ContactMenu isOpen={isOpen}>
           `
           <CloseToggle onClick={handleCloseToggle}>
@@ -73,13 +86,40 @@ export default function MainPage() {
           </CloseToggle>
           <ContactMenuItems>
             <ContactMenuItem>
-              <GithubLogo />
+              <Label
+                onClick={() =>
+                  HandleClickButton("https://medium.com/@berkayserbetci13")
+                }
+              >
+                Medium
+              </Label>
             </ContactMenuItem>
             <ContactMenuItem>
-              <GmailLogo />
+              <Label
+                onClick={() =>
+                  HandleClickButton("https://github.com/BerkaySerbetci")
+                }
+              >
+                {" "}
+                <GithubLogo />
+              </Label>
             </ContactMenuItem>
             <ContactMenuItem>
-              <LinkedinLogo />
+              <Label onClick={directtoGmail}>
+                <GmailLogo />
+              </Label>
+            </ContactMenuItem>
+            <ContactMenuItem>
+              <Label
+                onClick={() =>
+                  HandleClickButton(
+                    "https://www.linkedin.com/in/berkayserbetci/"
+                  )
+                }
+              >
+                {" "}
+                <LinkedinLogo />
+              </Label>
             </ContactMenuItem>
           </ContactMenuItems>
         </ContactMenu>

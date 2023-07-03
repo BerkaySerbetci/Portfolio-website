@@ -236,3 +236,28 @@ export const CloseToggle = styled.span`
     height: 48px;
   }
 `;
+
+export const ButtonCv = styled.button`
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 200px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 13px 23px;
+  border: 1px solid #222222;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s;
+  background: #fff;
+  color: #222222;
+
+  &:hover {
+    border-color: #000000;
+    background: #f7f7f7;
+  }
+`;

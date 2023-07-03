@@ -1,4 +1,5 @@
 import React from "react";
+import CVPDF from "../Berkay_Serbetci_CV.pdf";
 import {
   AboutLabel,
   AboutPage,
@@ -11,12 +12,15 @@ import {
   ImageFrame,
   Page,
 } from "../Style";
-import { Label } from "../Style";
+import { Label, ButtonCv } from "../Style";
 import Image from "../Images/resim.jpg";
 import { LeftArrow } from "../Images/Icon";
 import { Link } from "react-router-dom";
 
 export default function About() {
+  const HandleDownloadCV = () => {
+    window.open(CVPDF, "_blank");
+  };
   return (
     <Page>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -51,6 +55,7 @@ export default function About() {
           <ImageFrame src={Image} alt="Berkay Şerbetçi"></ImageFrame>
         </AboutSectionRight>
       </AboutSection>
+      <ButtonCv onClick={HandleDownloadCV}>Download CV</ButtonCv>
     </Page>
   );
 }
